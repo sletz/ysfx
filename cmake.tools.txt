@@ -18,9 +18,27 @@
 
 add_executable(ysfx_tool
     "tools/ysfx_tool.cpp")
+add_executable(ysfx_test_faust
+    "tools/ysfx_test_faust.cpp")
+add_executable(impulsejsfx
+    "tools/impulsejsfx.cpp")
+
 target_link_libraries(ysfx_tool
     PRIVATE
         ysfx::ysfx)
+target_link_libraries(ysfx_test_faust
+    PRIVATE
+        ysfx::ysfx)
+target_link_libraries(impulsejsfx
+    PRIVATE
+        ysfx::ysfx)
+
 install(
     TARGETS ysfx_tool
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+install(
+    TARGETS ysfx_test_faust
+    RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")
+install(
+    TARGETS impulsejsfx
     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}")

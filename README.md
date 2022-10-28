@@ -70,6 +70,7 @@ git submodule update --init --recursive
 mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo ..
+cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DYSFX_TESTS=yes -DYSFX_TOOLS=yes .. 
 cmake --build .
 ```
 
